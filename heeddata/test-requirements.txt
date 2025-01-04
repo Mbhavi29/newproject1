@@ -1,0 +1,11 @@
+coverage==4.2
+nose==1.3.7
+pycodestyle==2.11.1
+pep8==1.7.1
+pylint==2.6.0
+freezegun==0.3.8
+concurrencytest==0.1.2
+mongomock==3.22.1
+pyyaml==5.4.1
+-e tools/cloud_adapter_handler
+-e heeddata_clients/rest_api_client

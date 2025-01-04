@@ -1,0 +1,9 @@
+ARG BUILDTAG=build
+FROM heeddatalabs/dev176:${BUILDTAG}
+LABEL org.opencontainers.image.authors="Heeddata"
+
+COPY rest_api/test-requirements.txt rest_api/.pylintrc rest_api/.coveragerc ./rest_api/
+COPY tools/cloud_adapter_handler tools/cloud_adapter_handler
+COPY heeddata_clients/rest_api_client heeddata_clients/rest_api_client
+RUN pip install --no-cache-dir -r rest_api/test-requirements.txt
+COPY rest_api/rest_api_server/tests rest_api/rest_api_server/tests
